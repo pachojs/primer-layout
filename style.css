@@ -7,6 +7,8 @@
 html {
     font-size: 62.5%;
     background-color: whitesmoke;
+    font-family: 'Poppins', sans-serif;
+
 }
 
 .inactive {
@@ -16,22 +18,62 @@ html {
 header {
     width: 100%;
     height: 30vh;
-    display: flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content: center;
     
+       
 }
 
 .logo {
     opacity: 40%;
-    width: 200px;
+    width: 100px;
    
 }
 
+.lista_nav{
+    width: 70%;
+    display: flex;
+    justify-content: space-evenly;
+}
 
+.botones {
+    font-size: 1.6rem;
+    text-decoration: none;
+    color: black;
+    transition: .5s;
 
-nav {
+}
+.botones:hover {
+    transform: scale(1.3);
+}
+
+.contaniner-cards {
+    display: flex;
+    flex-direction: column;
+
+}
+.card {
+    width: 54%;
+    -webkit-box-shadow: 10px 10px 13px -11px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 13px -11px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 13px -11px rgba(0,0,0,0.75);
+
+}
+
+#img-cards {
+    height: 140px;
+    padding: 3px;
+}
+
+.footer-main {
+    height: 50vh;
+}
+
+.col1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* nav {
     width: 90%;
     height: 12vh;
     display: flex;
@@ -78,4 +120,4 @@ nav {
     z-index: 1000;
     list-style: none;
     
-}
+} */
