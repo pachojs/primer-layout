@@ -1,123 +1,178 @@
-* {
-    box-sizing: border-box;
+:root {
+    --color1: #E3FDFD;
+    --color2: #CBF1F5;
+    --color3: #A6E3E9;
+    --color4: #71C9CE;
+    --white: #FFFFFF;
+    --black: #000000;
+    --sm: 14px;
+    --md: 16px;
+    --lg: 24px;
+}
+
+*{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 html {
     font-size: 62.5%;
-    background-color: whitesmoke;
-    font-family: 'Poppins', sans-serif;
-
-}
-
+    font-family: 'Raleway', sans-serif;
+}    
+    
 .inactive {
     display: none;
 }
 
-header {
+/* estilos del logo del fondo */
+    /* forma inicial  */
+body {
+    background-image: url(./pics/logo.jpeg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-attachment: scroll;
+    background-position: 20% -40%;
+    margin: 0;
+    padding: 0;
     width: 100%;
-    height: 30vh;
+    height: 100%;
     
-       
 }
+body::after {
+    content: "";
+    background-color: rgba(255, 255, 255, 0.7); 
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1; 
+    
+  }
 
-.logo {
-    opacity: 40%;
-    width: 100px;
+    /* forma 2 */
+ /* .backgroundimg {
+    width: 100%;
+    position: absolute;
+    margin-top: 40%;
+    opacity: 0.3;
+    z-index: -1;    
+} */
+
+#logo {
+    width: 10rem;
+    margin: 0 auto;
    
 }
 
-.lista_nav{
-    width: 70%;
-    display: flex;
-    justify-content: space-evenly;
-}
-
-.botones {
-    font-size: 1.6rem;
-    text-decoration: none;
-    color: black;
-    transition: .5s;
-
-}
-.botones:hover {
-    transform: scale(1.3);
-}
-
-.contaniner-cards {
-    display: flex;
-    flex-direction: column;
-
-}
-.card {
-    width: 54%;
-    -webkit-box-shadow: 10px 10px 13px -11px rgba(0,0,0,0.75);
-    -moz-box-shadow: 10px 10px 13px -11px rgba(0,0,0,0.75);
-    box-shadow: 10px 10px 13px -11px rgba(0,0,0,0.75);
-
-}
-
-#img-cards {
-    height: 140px;
-    padding: 3px;
-}
-
-.footer-main {
-    height: 50vh;
-}
-
-.col1 {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-/* nav {
-    width: 90%;
-    height: 12vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.header_nav_ul {
+/* estilos header */
+.nav_container {
+    font-size: 2rem;
     width: 100%;
-    height: 10vh;
-    list-style: none;
-    display:flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    align-content: space-evenly;
-    justify-content: space-evenly;
-    font-size: 1.6rem;
-}
-
-.header_nav_ul li a {
-    text-decoration: none;
-      
-}
-
-.header_nav_ul li:hover {
-    font-size: 3rem;
-    text-decoration:underline black;    
-}
-
-.header_nav_ul_li_services .ul_services_children {
-    display: none;
-    position: absolute;
-    text-align-last: center;
-    width: 35%;
-    z-index: 1000;
-    font-size: 1.6rem;
-
-}
-
-.header_nav_ul_li_services:hover .ul_services_children {
-    display: block;
-    flex-direction: column;
-    z-index: 1000;
-    list-style: none;
+    height: 15vh;
+    display: flex;
+    justify-content: space-between;
     
-} */
+}
+.nav_ul {
+    position: absolute;
+    background-color: var(--color1);
+    width: 50%;
+    height: 30%;
+    text-decoration: none;
+    list-style: none;
+
+}
+
+.nav_ul_li {
+    background-color: transparent;
+    margin-top: 30px;
+}
+.nav_ul a {
+    text-decoration: none;
+    color: var(--black);
+    margin-right: 2px;
+}
+
+.nav_ul img {
+    width: var(--md);
+    margin-right:2px ;
+}
+
+
+
+/* estilos toggler-button */
+.toggler-button {
+    background-color: transparent;
+    border: none;
+    transition: calc(1s);
+}
+
+.toggler-button img {
+    width: var(--lg);
+}
+
+.toggler-button:hover{
+    border-radius: 4px;
+    background-color:var(--color4);
+    
+}
+
+/* estilos del main */
+
+.imageCards {
+    max-width: 540px;
+}
+
+
+@media (min-width: 480px) {
+    body {
+        background-position: 0% -5%;
+    }
+    
+    .nav_ul {
+        width: 100%;
+        height: 10%;
+        margin-top: 10px;
+        text-decoration: none;
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+       
+    }
+    .toggler-button {
+        display: none;
+    }
+
+    .nav_container {
+        display: flex;
+        align-items: flex-end;
+        justify-content: end;
+        width: 90%;
+        height: 10vh;
+        
+    }
+      
+    .nav_ul_li {
+        background-color: transparent;
+        font-size: 20px;
+    }
+    .nav_ul a {
+        text-decoration: none;
+        color: var(--black);
+        margin-right: 2px;
+    }
+    
+    .nav_ul img {
+        margin-right:2px ;
+    }
+
+
+    #logo {
+        width: 10.5rem;
+        margin: -10px auto;
+       
+    }
+}
