@@ -1,3 +1,9 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 :root {
     --color1: #E3FDFD;
     --color2: #CBF1F5;
@@ -10,11 +16,6 @@
     --lg: 24px;
 }
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
 html {
     font-size: 62.5%;
@@ -31,9 +32,9 @@ body {
     background-image: url(./pics/logo.jpeg);
     background-repeat: no-repeat;
     background-size: contain;
-    background-attachment: scroll;
-    background-position: 20% -40%;
-    margin: 0;
+    background-attachment:fixed;
+    background-position: 20% 50%;
+    margin: 0 auto;
     padding: 0;
     width: 100%;
     height: 100%;
@@ -42,7 +43,7 @@ body {
 body::after {
     content: "";
     background-color: rgba(255, 255, 255, 0.7); 
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
@@ -51,15 +52,6 @@ body::after {
     
   }
 
-    /* forma 2 */
- /* .backgroundimg {
-    width: 100%;
-    position: absolute;
-    margin-top: 40%;
-    opacity: 0.3;
-    z-index: -1;    
-} */
-
 #logo {
     width: 10rem;
     margin: 0 auto;
@@ -67,6 +59,12 @@ body::after {
 }
 
 /* estilos header */
+
+header {
+    width: 100%;
+    height: 25vh;
+}
+
 .nav_container {
     font-size: 2rem;
     width: 100%;
@@ -101,7 +99,6 @@ body::after {
 }
 
 
-
 /* estilos toggler-button */
 .toggler-button {
     background-color: transparent;
@@ -119,18 +116,132 @@ body::after {
     
 }
 
-/* estilos del main */
+/* estilos vista inicial aprende a confeccionar */
 
-.imageCards {
-    max-width: 540px;
+.contenedor-vista-inicial {
+    position: absolute;
+    border-radius: 20px;
+    border: 1px solid var(--color4);
+    width: 80%;
+    margin: 5px auto;
+    box-shadow: 0 8px 32px rgba(31, 222, 130, 0.46);
+    background-color: var(--color1);
+}
+
+.contenido-header {
+    width: 80%;
+    height: 200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.img_vista_inicial {
+    width: 0;
+   
+    /* animation: ease-in animat 1s; */
+}
+
+@keyframes animat {
+    0%{
+        transform: scale(0);
+    }
+    80%{
+        transform: scale(1); /*probar con 2*/
+    }
+}
+
+.textos-header{
+    margin: 0 0 0 30px;
+}
+
+.contenido-header p {
+    font-weight: 100;
+    margin-top: 14px;
+    color: var(--black);
+
+}
+
+.contenido-header a{
+    margin: 28px 0 0 0;
+    width: 130px;
+    display: inline-block;
+    background: var(--color4);
+    text-align: center;
+    color: var(--white);
+    padding: 12px 0;
+    text-decoration: none;
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: 14px;
+    border-radius: 5px;
+    box-shadow: 0 8px 32px rgba(31, 222, 130, 0.46);
+
+}
+
+.boton-vista-inicial {
+    margin: 10px;
+    border: none;
+}
+.boton-vista-inicial img {
+    width: var(--lg);
+
 }
 
 
-@media (min-width: 480px) {
-    body {
-        background-position: 0% -5%;
+/* estilos main */
+/* targetas */
+    .main_cards_container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
     
+    .cards {
+    border-radius: 20px;
+    border: 1px solid var(--color4);
+    width: 80%;
+    height: 20vh;
+    margin: 50px auto;
+    box-shadow: 0 8px 32px rgba(31, 222, 130, 0.46);
+    background-color: var(--color1);
+    display: flex;
+    }
+
+    /* estilos imagecards */
+
+    .imageCards {
+        width: 0;
+    }
+
+    /* estilos h2 cards */
+
+    .card-title {
+        margin: auto;
+        padding:4rem;
+    }
+
+
+
+/* media query */
+
+
+@media (min-width: 600px) {
+    /* estilos del logo del fondo */
+    body {
+        background-image: url(./pics/logo.jpeg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-attachment:fixed;
+        background-position: 50% 5%;
+        margin: 0 auto;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+    }
+    /* estilos nav */
+
     .nav_ul {
         width: 100%;
         height: 10%;
@@ -141,9 +252,6 @@ body::after {
         flex-direction: row;
         justify-content: space-evenly;
        
-    }
-    .toggler-button {
-        display: none;
     }
 
     .nav_container {
@@ -158,6 +266,7 @@ body::after {
     .nav_ul_li {
         background-color: transparent;
         font-size: 20px;
+        margin-top: 15px;
     }
     .nav_ul a {
         text-decoration: none;
@@ -174,5 +283,104 @@ body::after {
         width: 10.5rem;
         margin: -10px auto;
        
+    }
+
+    
+/* estilos vista inicial aprende a confeccionar */
+
+    .contenedor-vista-inicial {
+        border-radius: 20px;
+        border: 1px solid var(--color4);
+        margin: 10px auto;
+        width: 80%;
+        box-shadow: 0 8px 32px rgba(31, 222, 130, 0.46);
+        background-color: var(--color1);
+        animation: ease-in animat 1s;
+    }
+
+    .contenido-header {
+        width: 95%;
+        height: 400px;
+        margin: 20px;
+        display: flex;
+        align-items: center;
+        
+        
+    }
+
+    .img_vista_inicial {
+        width: 400px;
+        margin-right: 10px;
+        animation: ease-in animat 1s;
+    }
+
+    .textos-header{
+        margin: 0 0 0 30px;
+    }
+
+    .contenido-header p {
+        font-weight: 100;
+        margin-top: 14px;
+        color: var(--black);
+
+    }
+
+    .contenido-header a{
+        margin: 28px 0 0 0;
+        width: 130px;
+        display: inline-block;
+        background: var(--color4);
+        text-align: center;
+        color: var(--white);
+        padding: 12px 0;
+        text-decoration: none;
+        font-weight: 400;
+        text-transform: uppercase;
+        font-size: 14px;
+        border-radius: 5px;
+        box-shadow: 0 8px 32px rgba(31, 222, 130, 0.46);
+
+    }
+
+    /* estilos toggler-button */
+    
+    .toggler-button {
+        display: none;
+    }
+
+   
+    /* estilos main */
+
+    .main_cards_container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+   
+    /* targetas */
+    .cards {
+        border-radius: 20px;
+        border: 1px solid var(--color4);
+        width: 80%;
+        height: 40vh;
+        margin: 50px auto;
+        box-shadow: 0 8px 32px rgba(31, 222, 130, 0.46);
+        background-color: var(--color1);
+        display: flex;
+        }
+
+
+     /* estilos imagecards */
+
+    .imageCards {
+        width: 25rem;
+        margin: 10px;
+        border-radius: 20px;
+    }
+
+    .card-title {
+        margin: auto;
+        padding:100px;
     }
 }
