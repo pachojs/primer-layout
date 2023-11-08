@@ -22,9 +22,6 @@ html {
     font-family: 'Raleway', sans-serif;
 }    
     
-.inactive {
-    display: none;
-}
 
 /* estilos del logo del fondo */
     /* forma inicial  */
@@ -194,7 +191,8 @@ header {
 
 
 /* estilos main */
-/* targetas */
+/* tarjetas */
+
     .main_cards_container {
         display: flex;
         flex-direction: column;
